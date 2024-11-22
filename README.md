@@ -28,10 +28,10 @@ The project is built using:
 
 ## Screenshots 📸
 
-### Light Mode
+## Light Mode
 ![Light Mode Screenshot](https://via.placeholder.com/400x800?text=Light+Mode)
 
-### Dark Mode
+## Dark Mode
 ![Dark Mode Screenshot](https://via.placeholder.com/400x800?text=Dark+Mode)
 
 ---
