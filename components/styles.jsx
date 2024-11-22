@@ -145,6 +145,9 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     fontWeight: 'bold',
+    padding: 10,
+    borderRadius: 5,
+    color: '#000', // Consistent text color for both modes
   },
   // Error message style
   error: {

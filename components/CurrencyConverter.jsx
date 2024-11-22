@@ -42,7 +42,13 @@ const CurrencyConverter = () => {
 
   // Fetch conversion rates whenever amount, fromCurrency, or toCurrencies change
   useEffect(() => {
-    if (amount && fromCurrency && toCurrencies.length > 0) {
+    if (amount === "" || amount === "0") {
+      const newResults = {};
+      toCurrencies.forEach((currency) => {
+        newResults[currency] = "0.00";
+      });
+      setResults(newResults);
+    } else if (amount && fromCurrency && toCurrencies.length > 0) {
       const fetchRates = async () => {
         try {
           const response = await axios.get(
