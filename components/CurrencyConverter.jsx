@@ -24,7 +24,7 @@ const CurrencyConverter = () => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [pickerAnims, setPickerAnims] = useState([new Animated.Value(1)]);
 
-  // Fetch available currencies on component mount
+  // Fetch available currencies
   useEffect(() => {
     axios
       .get("https://api.exchangerate-api.com/v4/latest/USD")
