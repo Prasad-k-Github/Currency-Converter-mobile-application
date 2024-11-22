@@ -22,6 +22,7 @@ const CurrencyConverter = () => {
   const [error, setError] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0));
+  const [pickerAnims, setPickerAnims] = useState([new Animated.Value(1)]);
 
   // Fetch available currencies on component mount
   useEffect(() => {
@@ -78,11 +79,12 @@ const CurrencyConverter = () => {
 
   // Handle amount input change
   const handleAmountChange = (text) => {
-    if (isNaN(text)) {
+    const sanitizedText = text.replace(/\s/g, ""); // Remove spaces
+    if (isNaN(sanitizedText)) {
       setError("Please enter a valid number.");
     } else {
       setError(null);
-      setAmount(text);
+      setAmount(sanitizedText);
     }
   };
 
@@ -94,6 +96,13 @@ const CurrencyConverter = () => {
   // Add a new target currency
   const addTargetCurrency = () => {
     setToCurrencies([...toCurrencies, ""]);
+    const newAnim = new Animated.Value(0);
+    setPickerAnims([...pickerAnims, newAnim]);
+    Animated.timing(newAnim, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
   };
 
   // Remove a target currency
@@ -101,6 +110,8 @@ const CurrencyConverter = () => {
     if (toCurrencies.length > 1) {
       const newToCurrencies = toCurrencies.filter((_, i) => i !== index);
       setToCurrencies(newToCurrencies);
+      const newPickerAnims = pickerAnims.filter((_, i) => i !== index);
+      setPickerAnims(newPickerAnims);
     } else {
       setError("At least one target currency is required.");
     }
@@ -117,10 +128,11 @@ const CurrencyConverter = () => {
 
   return (
     // Main container with conditional styling based on dark mode
-    <View
+    <Animated.View
       style={[
         styles.screen,
         isDarkMode ? styles.darkContainer : styles.lightContainer,
+        { opacity: fadeAnim },
       ]}
     >
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -216,13 +228,14 @@ const CurrencyConverter = () => {
 
           {/* To currencies pickers */}
           {toCurrencies.map((currency, index) => (
-            <View
+            <Animated.View
               key={index}
               style={[
                 styles.pickerContainer,
                 isDarkMode
                   ? styles.darkPickerContainer
                   : styles.lightPickerContainer,
+                { opacity: pickerAnims[index] },
               ]}
             >
               <Text
@@ -261,7 +274,7 @@ const CurrencyConverter = () => {
                   <Ionicons name="close-circle" size={24} color="#fff" />
                 </TouchableOpacity>
               )}
-            </View>
+            </Animated.View>
           ))}
 
           {/* Add target currency button */}
@@ -290,7 +303,7 @@ const CurrencyConverter = () => {
           ))}
         </View>
       </ScrollView>
-    </View>
+    </Animated.View>
   );
 };
 
