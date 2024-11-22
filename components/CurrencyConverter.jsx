@@ -190,9 +190,6 @@ const CurrencyConverter = () => {
               style={
                 isDarkMode ? pickerSelectStyles.dark : pickerSelectStyles.light
               }
-              Icon={() => {
-                return <Ionicons name="chevron-down" size={24} color={isDarkMode ? "#fff" : "#000"} />;
-              }}
             />
           </View>
 
@@ -246,9 +243,6 @@ const CurrencyConverter = () => {
                     ? pickerSelectStyles.dark
                     : pickerSelectStyles.light
                 }
-                Icon={() => {
-                  return <Ionicons name="chevron-down" size={24} color={isDarkMode ? "#fff" : "#000"} />;
-                }}
               />
               {toCurrencies.length > 1 && (
                 <TouchableOpacity
