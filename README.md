@@ -64,3 +64,8 @@ Follow these steps to run the app locally:
 - Run on an emulator (iOS/Android).
 
 ---
+
+5. **API Integration 🌐
+This app fetches real-time exchange rates using the ExchangeRate-API. The integration ensures users always receive accurate and up-to-date currency conversion rates.**:
+
+---
