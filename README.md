@@ -29,7 +29,7 @@ The project is built using:
 ## Screenshots 📸
 
 ## Light Mode
-![Light Mode Screenshot]([screenshots/Loght mode.jpg](https://github.com/Prasad-k-Github/Currency-Converter-mobile-application/blob/main/screenshots/Loght%20mode.jpg))
+![Light Mode Screenshot](https://github.com/Prasad-k-Github/Currency-Converter-mobile-application/blob/main/screenshots/Loght%20mode.jpg)
 ## Dark Mode
 ![Dark Mode Screenshot](https://via.placeholder.com/400x800?text=Dark+Mode)
 
