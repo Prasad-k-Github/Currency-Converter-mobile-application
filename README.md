@@ -44,3 +44,23 @@ Follow these steps to run the app locally:
    ```bash
    git clone https://github.com/prasad-k-github/currency-converter.git
    cd currency-converter
+
+---
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+
+---
+
+3. **Start the Development Server**:
+   ```bash
+   npx expo start
+
+---
+
+4. **Run the App**:
+- Use the Expo Go app to test on a physical device.
+- Run on an emulator (iOS/Android).
+
+---
