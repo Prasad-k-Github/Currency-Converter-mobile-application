@@ -29,7 +29,7 @@ The project is built using:
 ## Screenshots 📸
 
 ## Light Mode
-![Light Mode Screenshot](https://via.placeholder.com/400x800?text=Light+Mode)
+![Light Mode Screenshot](screenshots/Loght mode.jpg)
 ## Dark Mode
 ![Dark Mode Screenshot](https://via.placeholder.com/400x800?text=Dark+Mode)
 
